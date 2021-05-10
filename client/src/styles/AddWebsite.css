@@ -1,0 +1,23 @@
+.add-website {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  margin-top: -10px;
+  /* height: 1em; */
+}
+
+.add-website-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.add-website-input {
+  height: 0.5em;
+  width: 20em;
+}
+
+.add-website-button {
+  height: 34px;
+  cursor: pointer;
+}

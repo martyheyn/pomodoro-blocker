@@ -1,0 +1,26 @@
+.navbar {
+  background: #e3457c;
+  opacity: 0.8;
+  height: 65px;
+  font-size: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  max-width: 1500px;
+}
+
+.navbar-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-item {
+  padding: 0em 6em;
+}

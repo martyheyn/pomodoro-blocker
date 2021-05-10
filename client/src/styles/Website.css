@@ -1,0 +1,8 @@
+.website {
+  list-style-type: none;
+  font-size: 22px;
+}
+
+.website-delete-button {
+  cursor: pointer;
+}

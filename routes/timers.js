@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const { startTimer, stopTimer, deleteTimer } = require('../controllers/timers');
+const {
+  startTimer,
+  getTimer,
+  deleteTimer,
+  unblock,
+} = require('../controllers/timers');
 
-router.route('/').get(stopTimer).post(startTimer);
+router.route('/').get(getTimer).post(startTimer).delete(unblock);
 
 router.route('/:id').delete(deleteTimer);
 

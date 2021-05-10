@@ -1,22 +1,26 @@
 import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
+import { Modal, Backdrop, Fade } from '@material-ui/core';
 import InfoIcon from '@material-ui/icons/Info';
-
 import Website from './Website';
 
 import { GlobalContext } from '../context/GlobalState';
 
+import '../styles/WebsiteList.css';
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
+    whiteSpace: 'pre-wrap',       /* CSS3 */   
+    // whiteSpace: '-moz-pre-wrap',  /* Firefox */  
+    wordWrap: 'break-word',       /* IE */
     alignItems: 'center',
     justifyContent: 'center',
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
+    // width: '100%',
+    maxWidth: 900,
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -38,7 +42,7 @@ const WebsiteList = () => {
 
   return (
     <div>
-      <button type='button' onClick={handleOpen}>
+      <button onClick={handleOpen} className='info-button'>
         <InfoIcon />
       </button>
       <Modal
@@ -53,9 +57,9 @@ const WebsiteList = () => {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2>Blocked Sites</h2>
+            <h1>Blocked Sites</h1>
             {websites.length >= 1 ? (
-              <p>
+              <p className='modal-text'>
                 {websites.map((website) => (
                   <Website
                     key={website.id}

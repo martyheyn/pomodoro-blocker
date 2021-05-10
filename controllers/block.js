@@ -4,16 +4,13 @@
 const fs = require('fs');
 
 // Define the blocker function
-let block = () => {
+let block = (websites) => {
   // file
   // Make a variable to store path of hosts file
   const filePath = '/etc/hosts';
   // Store the redirection path in a variable
   // The websites in the block list will be directed to localhost (127.0.0.1)
   const redirectPath = '127.0.0.1';
-
-  // List of websities to be blocked
-  let websites = ['www.facebook.com', 'facebook.com'];
 
   console.log('Time to block websites');
   fs.readFile(filePath, (err, data) => {
@@ -47,12 +44,10 @@ let block = () => {
   });
 };
 
-let unblock = () => {
+let unblock = (websites) => {
   // Make a variable to store path of hosts file
   const filePath = '/etc/hosts';
 
-  // List of websities to be blocked
-  let websites = ['www.facebook.com', 'facebook.com'];
   /**
    * Declare and empty string,
    * We will keep on appending the lines which do not contain our websites to this string

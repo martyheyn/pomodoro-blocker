@@ -13,7 +13,12 @@ const TimerSchema = new mongoose.Schema({
   },
   websites: [
     {
-      type: String,
+      id: {
+        type: String,
+      },
+      website: {
+        type: String,
+      },
     },
   ],
   createdAt: {
